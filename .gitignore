@@ -1,0 +1,11 @@
+*.dll
+*.pdb
+yuntongxun/Net/YunTongXun/bin/Debug/log.txt
+yuntongxun/Net/YunTongXun/bin/Debug/YunTongXun.exe
+yuntongxun/Net/YunTongXun/bin/Debug/YunTongXun.vshost.exe
+*.user
+*.exe
+*.manifest
+yuntongxun/Net/YunTongXun/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+yuntongxun/Net/YunTongXun/obj/Debug/YunTongXun.csproj.FileListAbsolute.txt
+yuntongxun/Net/YunTongXun/obj/Debug/YunTongXun.csprojResolveAssemblyReference.cache
