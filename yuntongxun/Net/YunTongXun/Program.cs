@@ -19,7 +19,7 @@ namespace YunTongXun
             //AccountInfo();
             //SendSms();
             //GetSubAccounts();
-            // TemplateSms();
+            TemplateSms();
             VoiceVerify();
             
 
