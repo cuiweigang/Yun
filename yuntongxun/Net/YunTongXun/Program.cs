@@ -21,24 +21,7 @@ namespace YunTongXun
             //GetSubAccounts();
             // TemplateSms();
             VoiceVerify();
-            #region[隐藏]
-
-            // request.UserAgent = DefaultUserAgent;
-            //if (!string.IsNullOrEmpty(userAgent))
-            //{
-            //    request.UserAgent = userAgent;
-            //}
-            //if (timeout.HasValue)
-            //{
-            //    request.Timeout = timeout.Value;
-            //}
-            //if (cookies != null)
-            //{
-            //    request.CookieContainer = new CookieContainer();
-            //    request.CookieContainer.Add(cookies);
-            //}
-
-            #endregion
+            
 
             Console.ReadKey();
         }
