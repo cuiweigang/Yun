@@ -49,7 +49,7 @@ namespace YunTongXun
         public static void SendSms()
         {
             var api = GetApi();
-            var result = api.SendSMS("手机号", "你好,我是测试用的,不要扣我钱!");
+            var result = api.SendSMS("18910283238", "你好,我是测试用的,不要扣我钱!");
             Console.WriteLine(getDictionaryData(result));
         }
 
@@ -104,14 +104,14 @@ namespace YunTongXun
             CCPRestSDK api = new CCPRestSDK();
 
             bool isInit = api.init("sandboxapp.cloopen.com", "8883");
-            api.setAccount("8a48b55146472691014689aa664f2", "f1258a0cc1a7492aa55e9eafb4b05f");
-            api.setAppId("8a48b5514647269101468a07a0d428c");
+            api.setAccount("8a48b55146472691014689aa664f2853", "f1258a0cc1a7492aa55e9eafb4b05f2f");
+            api.setAppId("8a48b5514647269101468a07a0d428c2");
 
             try
             {
                 if (isInit)
                 {
-                    Dictionary<string, object> retData = api.SendTemplateSMS("手机号", "1783", new string[] { "123456,2" });
+                    Dictionary<string, object> retData = api.SendTemplateSMS("18910283238", "1783", new string[] { "123456,2" });
                     ret = getDictionaryData(retData);
                 }
                 else
@@ -139,14 +139,14 @@ namespace YunTongXun
             CCPRestSDK api = new CCPRestSDK();
 
             bool isInit = api.init("sandboxapp.cloopen.com", "8883");
-            api.setAccount("8a48b55146472691014689aa664f2", "f1258a0cc1a7492aa55e9eafb4b05");
-            api.setAppId("8a48b5514647269101468a07a0d42");
+            api.setAccount("8a48b55146472691014689aa664f2853", "f1258a0cc1a7492aa55e9eafb4b05f2f");
+            api.setAppId("8a48b5514647269101468a07a0d428c2");
 
             try
             {
                 if (isInit)
                 {
-                    Dictionary<string, object> retData = api.VoiceVerify("手机号", "123456", null, "3", null);
+                    Dictionary<string, object> retData = api.VoiceVerify("18910283238", "123456", null, "3", null);
                     ret = getDictionaryData(retData);
                 }
                 else
@@ -171,9 +171,9 @@ namespace YunTongXun
             CCPRestSDK api = new CCPRestSDK();
 
             bool isInit = api.init("sandboxapp.cloopen.com", "8883");
-            api.setAccount("8a48b55146472691014689aa664f2", "f1258a0cc1a7492aa55e9eafb4b05");
-            api.setAppId("aaf98f8946471bb0014689b7fa4927");
-            api.setSubAccount("aaf98f8946471bb0014689b7fa6327", "ffbd6baa633346edb04b8159c56049", "81617100000001", "kalyrn0i");
+            api.setAccount("8a48b55146472691014689aa664f2853", "f1258a0cc1a7492aa55e9eafb4b05f2f");
+            api.setAppId("aaf98f8946471bb0014689b7fa492725");
+            api.setSubAccount("aaf98f8946471bb0014689b7fa632726", "ffbd6baa633346edb04b8159c56049a4", "81617100000001", "kalyrn0i");
 
             return api;
         }
