@@ -1,6 +1,5 @@
-ï»¿# encoding:utf-8
+# encoding:GBK
 
-import urllib
 import httplib
 import re,sys
 import os
@@ -9,19 +8,17 @@ import urlparse
 import urllib  
 import urllib2  
 import cookielib  
-import string  
+import string 
 
-import httplib
-import urlparse
 
-# æå–å“ç‰ŒID
+# ÌáÈ¡Æ·ÅÆID
 def achieveBrandId(path):
 	m=re.search(r"\d+",path)
 	if m:
 		return m.group(0)
 	return 0
 
-#éªŒè¯å›¾ç‰‡æ˜¯å¦å­˜åœ¨
+#¼ì²âÍ¼Æ¬ÊÇ·ñ´æÔÚ
 def checkExits(path):
 	url="p10.ytrss.com"
 	conn=httplib.HTTPConnection(url)
@@ -45,49 +42,49 @@ def request(url):
     conn.request(method='GET', url=url , headers={'Cookie': cookie})
     return conn.getresponse()
 
-# print "è·å–é¦–é¡µä¿¡æ¯"
-#é¦–é¡µ
+# print "»ñÈ¡Ê×Ò³ĞÅÏ¢"
+#Ê×Ò³
 url = 'http://k-d.cc/List/list-50000000-10000000.html'
 html_doc = request(url).read()
-#è·å–æ‰€æœ‰çš„åˆ†ç±»ä¿¡æ¯
-print "è·å–æ‰€æœ‰åˆ†ç±»..."
+#»ñÈ¡ËùÓĞµÄ·ÖÀàĞÅÏ¢
+print "»ñÈ¡ËùÓĞ·ÖÀà..."
 categorys=re.findall(r"data-brandid=\"\d{8}\"",html_doc)
 categorys=re.findall(r"\d{8}","".join(categorys))
-print "åˆ†ç±»ä¿¡æ¯è·å–å®Œæ¯•"
+print "·ÖÀàĞÅÏ¢»ñÈ¡Íê±Ï"
 
-print "è·å–å“ç‰Œå›¾ç‰‡åœ°å€..."
+print "»ñÈ¡Æ·ÅÆÍ¼Æ¬µØÖ·..."
 
 imgs=[]
 for category in categorys:
-	print "è·å–%såˆ†ç±»å›¾ç‰‡..." %category
+	print "»ñÈ¡%s·ÖÀàÍ¼Æ¬..." %category
 	urls="http://k-d.cc/List/Filter?N=10000000-50000000&brandId=%s" %category
 	print urls
 	html_doc=request(urls).read()
 	urls=re.findall("/kd/brand/\d+.jpg",html_doc)
 	imgs=imgs+urls
 
-# print "è·å–å“ç‰Œå›¾ç‰‡åœ°å€å®Œæ¯•"
+# print "»ñÈ¡Æ·ÅÆÍ¼Æ¬µØÖ·Íê±Ï"
 
-print "å¼€å§‹éªŒè¯å›¾ç‰‡æ˜¯å¦å­˜åœ¨"
+print "¿ªÊ¼¼ì²âÍ¼Æ¬..."
 notexitsImgs=[]
 isCheckImgs={}
 
 for img in imgs:
-	print "éªŒè¯"+img+"..."
+	print "¼ì²â"+img+"..."
 	result= checkExits(img)
 	if isCheckImgs.has_key(img):
-		print "%så·²ç»éªŒè¯è¿‡...è·³è¿‡æ‰§è¡Œä¸‹ä¸€ä¸ª" %img
+		print "%sÒÑ¾­¹ı¼ì²â,Ìø¹ıÖ´ĞĞÏÂÒ»¸ö" %img
 		continue
 	else:
 		isCheckImgs[img]=img
 
 	print result[0],result[1]
 	if result[0]==404:
-		print "å“ç‰ŒIdä¸º%sçš„å›¾ç‰‡ä¸å­˜åœ¨" %result[1]
+		print "Æ·ÅÆIdÎª%sµÄÍ¼Æ¬²»´æÔÚ" %result[1]
 		imgUrl="<img src='http://p10.ytrss.com/Brand/%s/logo.jpg'/>" %result[1]
 		notexitsImgs.append(imgUrl)
 
-print "ä¿å­˜å›¾ç‰‡åˆ°æ–‡ä»¶"
+# print "±£´æÍ¼Æ¬µ½ÎÄ¼ş"
 htmlTemplate='''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,7 +96,13 @@ htmlTemplate='''<!DOCTYPE html>
     </body>
 </html>'''
 
-html=htmlTemplate %"<br/>".join(notexitsImgs)
-file= open("d:\img.html","w")
-file.write(html)
-file.close()
+if notexitsImgs:
+	html=htmlTemplate %"<br/>".join(notexitsImgs)
+	file= open("NotExistBrand.html","w")
+	file.write(html)
+	print "ÓĞ²»´æÔÚµÄÆ·ÅÆÍ¼Æ¬,Çë·ÃÎÊ%sÎÄ¼ş½øĞĞ²é¿´" %os.path.join(sys.path[0],file.name)
+	file.close()
+else:
+	print "¼ì²âÍê±Ï,Ã»ÓĞÈ±ÉÙµÄÆ·ÅÆÍ¼Æ¬!"	
+
+raw_input("ÊäÈëÈÎÒâ¼ü½áÊø")
