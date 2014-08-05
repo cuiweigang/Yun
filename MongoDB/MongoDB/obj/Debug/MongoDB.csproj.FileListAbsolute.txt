@@ -1,0 +1,6 @@
+D:\cuiweigang\Desktop\Mongo源码\mongodb-csharp-master\source\MongoDB\bin\Debug\MongoDB.dll
+D:\cuiweigang\Desktop\Mongo源码\mongodb-csharp-master\source\MongoDB\bin\Debug\MongoDB.xml
+D:\cuiweigang\Desktop\Mongo源码\mongodb-csharp-master\source\MongoDB\obj\Debug\MongoDB.dll
+D:\cuiweigang\Desktop\Mongo源码\mongodb-csharp-master\source\MongoDB\obj\Debug\MongoDB.pdb
+D:\cuiweigang\Desktop\Mongo源码\mongodb-csharp-master\source\MongoDB\bin\Debug\MongoDB.pdb
+D:\cuiweigang\Desktop\Mongo源码\mongodb-csharp-master\source\MongoDB\obj\Debug\MongoDB.csprojResolveAssemblyReference.cache

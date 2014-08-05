@@ -1,0 +1,1 @@
+D:\cuiweigang\Desktop\Mongo源码\mongodb-csharp-master\source\MongoDB.GridFS.Tests\obj\Debug\MongoDB.GridFS.Tests.csprojResolveAssemblyReference.cache

@@ -1,0 +1,3 @@
+D:\cuiweigang\Desktop\Mongo源码\mongodb-csharp-master\source\MongoDB\bin\Release\MongoDB.xml
+D:\cuiweigang\Desktop\Mongo源码\mongodb-csharp-master\source\MongoDB\bin\Release\MongoDB.dll
+D:\cuiweigang\Desktop\Mongo源码\mongodb-csharp-master\source\MongoDB\obj\Release\MongoDB.dll
